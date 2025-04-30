@@ -12,7 +12,9 @@ import {store} from './redux/store';
 
 const root = document.getElementById("root");
 ReactDOM.createRoot(root).render(
-
+<Provider store={store}>
 <RouterProvider router={router} />
+</Provider>
 
 );
+
