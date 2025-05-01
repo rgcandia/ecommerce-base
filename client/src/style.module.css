@@ -1,0 +1,25 @@
+/* Reset extendido más robusto */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color:#d5d8dc;
+  color: #000;
+  display: flex;
+  justify-content: center;
+}
+
+
+.app{
+    background-color:#5d6d7e ;
+    width: 90vw;
+    height:100vw;
+    text-align: center;
+}
