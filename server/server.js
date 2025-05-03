@@ -16,4 +16,4 @@ io.on('connection', (socket) => {
   });
 });
 
-module.exports = httpServer;
+export default httpServer;
