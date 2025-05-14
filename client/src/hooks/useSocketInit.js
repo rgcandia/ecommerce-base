@@ -1,13 +1,12 @@
-// hooks/useSocketInit.js
 import { useEffect } from 'react';
 import conn from '../socket/index';
 
 export default function useSocketInit() {
   useEffect(() => {
-    conn.initSocket(); // tu método que conecta socket
+    conn.initSocket(); // conecta el socket 1 sola vez al arrancar
 
     return () => {
-      conn.socket?.disconnect(); // buena práctica: cerrar socket si se desmonta
+      conn.socket?.disconnect(); // limpia si se desmonta
     };
   }, []);
 }

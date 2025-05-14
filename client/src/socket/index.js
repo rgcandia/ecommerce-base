@@ -1,11 +1,29 @@
+// socket/index.js
 import { io } from 'socket.io-client';
 
-const socket = io('http://localhost:4002'); // URL de tu servidor
+let connected = false;
 
-const initSocket = ()=>{
+const socket = io('http://localhost:4001', {
+  autoConnect: false,
+});
+
+const initSocket = () => {
+  if (!connected) {
+    socket.connect();
+
     socket.on('connect', () => {
-        console.log('Conectado al servidor con ID:', socket.id);
-      });
-}
+      console.log('✅ Socket conectado con ID:', socket.id);
+      connected = true;
+    });
 
-export default {initSocket};
+    socket.on('disconnect', () => {
+      console.log('❌ Socket desconectado');
+      connected = false;
+    });
+  }
+};
+
+export default {
+  socket,
+  initSocket,
+};
