@@ -1,4 +1,4 @@
-import style from './style.module.css'
+import style from './App.module.css'
 import Nav from '../Nav/Nav';
 
 function App (){
