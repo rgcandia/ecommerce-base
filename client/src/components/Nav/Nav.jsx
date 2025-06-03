@@ -1,5 +1,4 @@
 import style from "./Nav.module.css";
-import logo from "../../../public/large_interno_wellspring.png";
 import { useAuth0 } from '@auth0/auth0-react';
 
 export default function Nav() {
@@ -9,7 +8,7 @@ export default function Nav() {
 
   return (
     <div className={style.nav}>
-      <img src={logo} alt="Logo Wellspring" className={style.logo} />
+      <img src="/large_interno_wellspring.png" alt="Logo Wellspring" className={style.logo} />
 
       {isAuthenticated && (
         <div className={style.userInfo}>
