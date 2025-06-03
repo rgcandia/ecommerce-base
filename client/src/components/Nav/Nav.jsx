@@ -17,7 +17,7 @@ export default function Nav() {
             alt="User Avatar"
             className={style.userIcon}
           />
-          <span className={style.userEmail}>{user.email}</span>
+          <span className={style.userName}>{user.name}</span>
           <button
             className={style.logoutButton}
             onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}
