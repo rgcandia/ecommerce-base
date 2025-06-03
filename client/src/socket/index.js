@@ -1,9 +1,14 @@
-// socket/index.js
 import { io } from 'socket.io-client';
 
 let connected = false;
 
-const socket = io('http://localhost:4001', {
+// 🧠 Detecta entorno: localhost en desarrollo, VITE_SERVER_SOCKET en producción
+const socketURL =
+  import.meta.env.MODE === 'development'
+    ? 'http://localhost:4001'
+    : import.meta.env.VITE_SERVER_SOCKET;
+
+const socket = io(socketURL, {
   autoConnect: false,
 });
 
