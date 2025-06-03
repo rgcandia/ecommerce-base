@@ -4,16 +4,23 @@ import { useAuth0 } from '@auth0/auth0-react';
 export default function Nav() {
   const { user, isAuthenticated, isLoading, logout } = useAuth0();
 
-  if (isLoading) return null; // o un spinner
+  if (isLoading) return null;
 
   return (
     <div className={style.nav}>
-      <img src="/large_interno_wellspring.png" alt="Logo Wellspring" className={style.logo} />
-
+      <div className={style.logoContainer}>
+        <img
+          src="/large_interno_wellspring.png"
+          alt="Logo Wellspring"
+          className={style.logo}
+        />
+      </div>
+    
+   
       {isAuthenticated && (
         <div className={style.userInfo}>
           <img
-            src={user.picture || '/default-user-icon.png'} // reemplaza con ruta a icono default si quieres
+            src={user.picture || '/default-user-icon.png'}
             alt="User Avatar"
             className={style.userIcon}
           />

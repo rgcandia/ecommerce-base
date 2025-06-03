@@ -1,50 +1,75 @@
 .nav {
   display: flex;
-  justify-content: space-between; /* logo izquierda, usuario derecha */
-  align-items: center;            /* centra verticalmente todo el nav */
+  justify-content: space-between;
+  align-items: center;
   padding: 10px 20px;
   background-color: transparent;
+  flex-wrap: wrap;
+}
+
+/* Sección del logo (70%) */
+.logoContainer {
+  flex: 0 0 70%;
+  display: flex;
+  align-items: center;
 }
 
 .logo {
-
-  width: auto;
+  max-width: 70%;
+  height: auto;
   object-fit: contain;
 }
 
-/* Contenedor del usuario: columna vertical centrada */
+/* Sección del usuario (20%) */
 .userInfo {
+  flex: 0 0 20%;
   display: flex;
   flex-direction: column;
-  align-items: center;    /* centra cada ítem del bloque de usuario */
-  gap: 6px;
+  align-items: center;
+  gap: 0.5em;
+ 
 }
 
 .userIcon {
-  width: 40px;
-  height: 40px;
+  width: clamp(2.5em, 5vw, 4em); /* entre 40px y 64px dependiendo del ancho */
+  height: clamp(2.5em, 5vw, 4em);
   border-radius: 50%;
   object-fit: cover;
   border: 1px solid #ccc;
 }
 
 .userName {
-  font-size: 14px;
+  font-size: clamp(0.8rem, 1vw, 1rem);
   color: #333;
   font-weight: 500;
+  text-align: center;
 }
 
 .logoutButton {
   background-color: transparent;
   border: 1px solid #888;
   border-radius: 4px;
-  padding: 5px 10px;
+  padding: 0.4em 0.8em;
   cursor: pointer;
-  font-size: 14px;
+  font-size: clamp(0.8rem, 1vw, 1rem);
   color: #555;
   transition: background-color 0.3s ease;
 }
 
 .logoutButton:hover {
   background-color: #f0f0f0;
+}
+
+/* Responsive: stack en pantallas pequeñas */
+@media (max-width: 600px) {
+  .logoContainer,
+  .userInfo {
+    flex: 0 0 100%;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .logo {
+    width: 60%;
+  }
 }
