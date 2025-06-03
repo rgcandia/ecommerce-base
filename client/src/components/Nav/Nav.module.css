@@ -1,7 +1,50 @@
-.nav{
-height: 10vh;
-background-color:#b2babb  ;
-display: flex;
-align-items: center;
-justify-content: center;
+.nav {
+  display: flex;
+  justify-content: space-between; /* logo izquierda, usuario derecha */
+  align-items: center;            /* centra verticalmente todo el nav */
+  padding: 10px 20px;
+  background-color: transparent;
+}
+
+.logo {
+
+  width: auto;
+  object-fit: contain;
+}
+
+/* Contenedor del usuario: columna vertical centrada */
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;    /* centra cada ítem del bloque de usuario */
+  gap: 6px;
+}
+
+.userIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #ccc;
+}
+
+.userEmail {
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+}
+
+.logoutButton {
+  background-color: transparent;
+  border: 1px solid #888;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #555;
+  transition: background-color 0.3s ease;
+}
+
+.logoutButton:hover {
+  background-color: #f0f0f0;
 }

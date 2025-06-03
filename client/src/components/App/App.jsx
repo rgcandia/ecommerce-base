@@ -5,7 +5,7 @@ function App (){
 
     return(<div className={style.app} >  
         <Nav/>
-        <h1>Componente Principal  APP</h1>
+        <h1>Bienvenidos !</h1>
      </div>)
 }
 export default App;
