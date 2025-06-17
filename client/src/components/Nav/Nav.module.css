@@ -4,9 +4,17 @@
   grid-template-columns: 5fr 1fr;
   align-items: center;
   padding: 1rem 2rem;
-
-    font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
+
+  /* Sombra solo abajo */
+  box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+
+  /* IMPORTANTE: altura mínima para contener contenido */
+  min-height: 80px; /* ajusta según el tamaño de tu logo y botón */
+
+  /* Para evitar que la sombra se recorte en navegadores que aplican overflow oculto */
+  overflow: visible;
 }
 
 .logoContainer {
@@ -72,3 +80,21 @@
     margin-left: auto;
   }
 }
+@media (max-width: 700px) {
+  .nav {
+    min-height: 60px; /* ajusta para pantallas pequeñas */
+    padding: 0.5rem 1rem;
+    box-shadow: 0 3px 5px -2px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Ajustes adicionales para logo y botón si quieres */
+  .logo {
+    max-height: 50px;
+  }
+
+  .logoutButton {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+
