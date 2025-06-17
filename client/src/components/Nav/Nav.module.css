@@ -1,75 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 .nav {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 5fr 1fr;
   align-items: center;
-  padding: 10px 20px;
-  background-color: transparent;
-  flex-wrap: wrap;
+  padding: 1rem 2rem;
+
+    font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
 }
 
-/* Sección del logo (70%) */
 .logoContainer {
-  flex: 0 0 70%;
   display: flex;
   align-items: center;
 }
 
 .logo {
-  max-width: 70%;
-  height: auto;
+  max-height: 100px;
   object-fit: contain;
 }
 
-/* Sección del usuario (20%) */
 .userInfo {
-  flex: 0 0 20%;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 0.5em;
- 
+  justify-content: flex-end;
+  gap: 1rem;
 }
 
 .userIcon {
-  width: clamp(2.5em, 5vw, 4em); /* entre 40px y 64px dependiendo del ancho */
-  height: clamp(2.5em, 5vw, 4em);
+  max-width: 60px;
+  max-height: 60px;
   border-radius: 50%;
   object-fit: cover;
-  border: 1px solid #ccc;
+  border: 2px solid #ddd;
+
 }
 
+
+
 .userName {
-  font-size: clamp(0.8rem, 1vw, 1rem);
-  color: #333;
   font-weight: 500;
-  text-align: center;
+  font-size: 1rem;
+  color: #333;
 }
 
 .logoutButton {
-  background-color: transparent;
-  border: 1px solid #888;
-  border-radius: 4px;
-  padding: 0.4em 0.8em;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #e63946;
+  color: white;
+  font-weight: 500;
+  border-radius: 6px;
   cursor: pointer;
-  font-size: clamp(0.8rem, 1vw, 1rem);
-  color: #555;
   transition: background-color 0.3s ease;
 }
 
 .logoutButton:hover {
-  background-color: #f0f0f0;
+  background-color: #d62828;
 }
-
-/* Responsive: stack en pantallas pequeñas */
-@media (max-width: 600px) {
-  .logoContainer,
-  .userInfo {
-    flex: 0 0 100%;
-    justify-content: center;
-    margin-bottom: 10px;
+@media (max-width: 900px) {
+  .userIcon,
+  .userName {
+    display: none;
   }
 
-  .logo {
-    width: 60%;
+  .userInfo {
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  .logoutButton {
+    margin-left: auto;
   }
 }

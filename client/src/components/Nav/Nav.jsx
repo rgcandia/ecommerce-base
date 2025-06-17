@@ -1,5 +1,6 @@
 import style from "./Nav.module.css";
 import { useAuth0 } from '@auth0/auth0-react';
+import { CiUser } from "react-icons/ci";
 
 export default function Nav() {
   const { user, isAuthenticated, isLoading, logout } = useAuth0();
@@ -20,7 +21,7 @@ export default function Nav() {
       {isAuthenticated && (
         <div className={style.userInfo}>
           <img
-            src={user.picture || '/default-user-icon.png'}
+            src={user.picture || <CiUser />}
             alt="User Avatar"
             className={style.userIcon}
           />
