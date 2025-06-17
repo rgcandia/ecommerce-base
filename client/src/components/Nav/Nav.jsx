@@ -30,7 +30,7 @@ export default function Nav() {
             className={style.logoutButton}
             onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}
           >
-            Cerrar sesión
+            Salir
           </button>
         </div>
       )}
