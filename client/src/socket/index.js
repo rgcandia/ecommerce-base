@@ -11,19 +11,38 @@ const socket = io(socketURL, {
   autoConnect: false,
 });
 
-const initSocket = () => {
+const initSocket = ({user}) => {
   if (!connected) {
     socket.connect();
 
     socket.on('connect', () => {
       console.log('✅ Socket conectado con ID:', socket.id);
       connected = true;
+
+
+       socket.emit('user_connected', {
+      
+        name: user.name,     // Nombre del usuario
+        email: user.email,   // Email
+        
+      });
+
+
+
+
     });
+
+
+    
 
     socket.on('disconnect', () => {
       console.log('❌ Socket desconectado');
       connected = false;
     });
+
+
+
+
   }
 };
 

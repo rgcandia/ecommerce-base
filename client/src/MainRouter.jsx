@@ -5,7 +5,7 @@ import useSocketInit from './hooks/useSocketInit';
 import LoaderDash from  './components/LoaderDash/LoaderDash'
 const MainRouter = () => {
   const { isAuthenticated, isLoading, loginWithRedirect } = useAuth0();
-  useSocketInit();
+  useSocketInit({user});
 
   if (isLoading) return <LoaderDash/>;
 
