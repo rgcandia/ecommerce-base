@@ -18,10 +18,10 @@ const initSocket = ({user}) => {
     socket.on('connect', () => {
       console.log('✅ Socket conectado con ID:', socket.id);
       connected = true;
-
+console.log("Llega acá")
 
        socket.emit('user_connected', {
-      
+       
         name: user.name,     // Nombre del usuario
         email: user.email,   // Email
         
