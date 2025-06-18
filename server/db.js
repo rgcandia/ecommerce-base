@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import fs from 'fs';
 import path from 'path';
 import pg from 'pg';
-import { fileURLToPath } from 'url';
+import { fileURLToPath, pathToFileURL } from 'url'; // 👈 agregado pathToFileURL
 
 dotenv.config();
 
@@ -28,8 +28,7 @@ const sequelize = new Sequelize(POSTGRES_DATABASE, POSTGRES_USER, POSTGRES_PASSW
   dialectOptions: {
     ssl: {
       require: true,
-      // ⚠️ Si usás Neon o Heroku, posiblemente también necesites esto:
-       rejectUnauthorized: false,
+      rejectUnauthorized: false,
     },
   },
 });
@@ -41,14 +40,15 @@ const files = fs.readdirSync(modelsPath)
   .filter((file) => file.indexOf('.') !== 0 && file !== basename && file.slice(-3) === '.js');
 
 for (const file of files) {
-  const module = await import(path.join(modelsPath, file));
+  const fileUrl = pathToFileURL(path.join(modelsPath, file)).href; // 👈 clave
+  const module = await import(fileUrl);
   modelDefiners.push(module.default);
 }
 
 // Injectamos la conexión (sequelize) a todos los modelos
 modelDefiners.forEach(model => model(sequelize));
 
-// Capitalizamos los nombres de los modelos ie: product => Product
+// Capitalizamos los nombres de los modelos
 let entries = Object.entries(sequelize.models);
 let capsEntries = entries.map(([name, model]) => [
   name[0].toUpperCase() + name.slice(1),
