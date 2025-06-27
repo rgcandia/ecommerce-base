@@ -4,11 +4,12 @@ import { useAuth0 } from '@auth0/auth0-react';
 export default function AccesoDenegado() {
   const { logout } = useAuth0();
 
-  const handleLogoutAndRedirect = () => {
-    logout({
-        returnTo: 'https://wellspring-kappa.vercel.app',
-    });
-  };
+ const handleLogoutAndRedirect = () => {
+  logout({
+    returnTo: window.location.origin,
+  });
+};
+
 
   return (
     <div className={styles.container}>
