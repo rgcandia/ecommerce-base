@@ -6,15 +6,12 @@ export default function AccesoDenegado() {
   const { logout } = useAuth0();
   const navigate = useNavigate();
 
-  const handleLogoutAndRedirect = () => {
-    // Logout sin returnTo para que no haga redirección externa
-    logout();
+const handleLogoutAndRedirect = () => {
+  logout({
+    returnTo: window.location.origin, // o la URL que desees
+  });
+};
 
-    // Navegar a '/' después del logout (esto probablemente se ejecuta antes
-    // que el logout recargue la página, así que es posible que no funcione
-    // 100% fiable, pero sirve para entornos de desarrollo)
-    navigate('/');
-  };
 
   return (
     <div className={styles.container}>
