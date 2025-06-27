@@ -13,7 +13,7 @@ export default function AccesoDenegado() {
   return (
     <div className={styles.container}>
       <div className={styles.card}>
-        <h1>Acceso Denegado</h1>
+        <h1>Acceso Denegado.</h1>
         <p>
           Solo se permite iniciar sesión con un correo institucional <strong>@wellspring.edu.ar</strong>
         </p>
