@@ -8,7 +8,7 @@ export default function AccesoDenegado() {
 
 const handleLogoutAndRedirect = () => {
   logout({
-    returnTo: "https://wellspring-kappa.vercel.app/"
+    returnTo: "https://wellspring-kappa.vercel.app"
   });
 };
 
