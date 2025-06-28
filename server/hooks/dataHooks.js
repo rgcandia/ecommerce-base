@@ -31,7 +31,7 @@ async function crearUsuario({ name, email, type = null }) {
     const nuevoUsuario = await User.create({
       name,
       email,
-      type,        // Puede ser null
+      type,       
       validated: false
     });
 
