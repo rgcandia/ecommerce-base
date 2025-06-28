@@ -8,7 +8,7 @@ export default (sequelize) => {
       autoIncrement: true,
     },
     type: {
-      type: DataTypes.ENUM('PADRE', 'DOCENTE', 'ADMIN'),
+      type: DataTypes.STRING,
       allowNull: false,
     },
     email: {
