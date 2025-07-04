@@ -16,8 +16,8 @@ function App() {
   userSocketInit({ user });
 
   // Escuchar evento 'getUser' y despachar setUser al store
-  useSocketGetUser((userFromServer) => {
-    dispatch(setUser(userFromServer));
+     useSocketGetUser((userFromServer) => {
+     dispatch(setUser(userFromServer));
   });
 
   return (

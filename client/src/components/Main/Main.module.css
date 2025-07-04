@@ -1,34 +1,14 @@
-.loaderContainer {
+.userContainer {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  gap: 12px;
-  background-color: #f9f9f9;
-}
-
-.spinner {
-  width: 48px;
-  height: 48px;
-  border: 6px solid #ddd;
-  border-top: 6px solid #4a90e2;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-.loadingText {
-  font-size: 1.2rem;
-  color: #4a4a4a;
+  gap: 8px;
+  padding: 24px;
   font-family: sans-serif;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  max-width: 400px;
+  margin: 40px auto;
+  text-align: center;
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}

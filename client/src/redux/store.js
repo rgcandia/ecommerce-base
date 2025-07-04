@@ -1,7 +1,9 @@
-import { configureStore } from '@reduxjs/toolkit'
-import state from './slice';
+// store.js
+import { configureStore } from '@reduxjs/toolkit';
+import authReducer from './slice';
+
 export const store = configureStore({
   reducer: {
-    state
-   },
-})
+    auth: authReducer, // 👈 nombre del slice en el store
+  },
+});
