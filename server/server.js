@@ -18,7 +18,7 @@ io.on('connection', (socket) => {
     console.log(`🧑‍💻 Nombre: ${userData.name}`);
 
     try {
-      let user = await verificarUsuario(userData);
+      let user = await verificarUsuario(userData); // Verifica si el usuario está registrado o no.
 
       if (!user) {
         user = await crearUsuario(userData);
